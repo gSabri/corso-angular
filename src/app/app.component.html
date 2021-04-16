@@ -1,0 +1,18 @@
+<!--<div> -->
+<!--<app-todo></app-todo>-->
+<!--</div>-->
+
+<!-- indica componente che fa da passaggio a contenuto dinamico -->
+<nav class="m-5 text-center">
+  <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    Home
+  </a>
+  <a [routerLink]="['/todo']">Todo</a>
+</nav>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+
+

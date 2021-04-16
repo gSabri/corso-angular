@@ -1,0 +1,30 @@
+<form [formGroup]="mioFormValidator" (submit)="addTodo()">
+
+  <div class="form-group col-lg-6 col-12">
+    <div class="card">
+
+      <div class="card-header">
+        <h4 class="card-title font-weight-bold text-center">{{title}}</h4>
+      </div>
+
+      <div class="card-body">
+        <input id="textInput" type="text" name="textInput"
+               placeholder="Add ToDo" autocomplete="off"
+               class="form-control"
+               formControlName="element" /> <!--[(ngModel)]="element"-->
+
+        <span *ngIf="mioFormValidator.get('element').invalid && mioFormValidator.get('element').errors.required">
+          Invalid input
+        </span>
+
+        <button type="submit" [disabled]="mioFormValidator.invalid"
+                class="btn btn-primary">
+          Save
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+</form>
