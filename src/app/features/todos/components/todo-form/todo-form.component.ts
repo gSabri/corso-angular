@@ -53,8 +53,8 @@ export class TodoFormComponent implements OnInit {
 
   private createForm() {
     this.mioFormValidator = new FormGroup(
-       {element: new FormControl('', [Validators.required, Validators.minLength(3)])}
-       );
+      {element: new FormControl('', [Validators.required, Validators.minLength(3)])}
+      );
   }
 
 }

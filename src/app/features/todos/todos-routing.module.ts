@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TodoComponent } from './containers/todo/todo.component';
+import {TodoListResolver} from './services/todo-list-resolver.service';
 
 const routes: Routes = [
     { path: '',
@@ -8,6 +9,9 @@ const routes: Routes = [
       pathMatch: 'full',
       data: {
         title: 'ToDo List'
+      },
+      resolve: {
+        todoListResolver: TodoListResolver
       }
     }
   ];

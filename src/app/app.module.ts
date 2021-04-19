@@ -8,6 +8,9 @@ import { TodoFormComponent } from './features/todos/components/todo-form/todo-fo
 import { TodoComponent } from './features/todos/containers/todo/todo.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AuthGuard} from './features/todos/services/auth-guard.service';
+import {TodoService} from './features/todos/services/todo.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,9 +24,13 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     /*FormsModule,
     ReactiveFormsModule,*/
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    TodoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

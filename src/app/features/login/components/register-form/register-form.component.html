@@ -1,0 +1,67 @@
+<form [formGroup]="registrationValidator" (submit)="registration()">
+
+  <div class="form-group col-12">
+    <div class="card">
+
+      <div class="card-header">
+        <h4 class="card-title font-weight-bold text-center">{{title}}</h4>
+      </div>
+
+      <div class="card-body">
+        <p>
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name"
+                 placeholder="Insert your name" autocomplete="off"
+                 class="form-control"
+                 formControlName="name" />
+          <span *ngIf="registrationValidator.get('name').invalid" class="alert-danger">
+            Invalid name
+          </span>
+        </p>
+
+        <p>
+          <label for="surname">Surname</label>
+          <input id="surname" type="text" name="surname"
+                 placeholder="Insert your surname" autocomplete="off"
+                 class="form-control"
+                 formControlName="surname" />
+          <span *ngIf="registrationValidator.get('surname').invalid" class="alert-danger">
+            Invalid surname
+          </span>
+        </p>
+
+        <p>
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="email"
+                 placeholder="Insert your email" autocomplete="off"
+                 class="form-control"
+                 formControlName="email" />
+          <span *ngIf="registrationValidator.get('email').invalid" class="alert-danger">
+            Invalid email
+          </span>
+        </p>
+
+        <p>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password"
+                 placeholder="Insert your password" autocomplete="off"
+                 class="form-control"
+                 formControlName="password"/>
+          <span *ngIf="registrationValidator.get('password').invalid" class="alert-danger">
+            Invalid password
+          </span>
+        </p>
+
+        <span class="text-right" style="margin-top: 0.5rem">
+          <button type="submit" [disabled]="registrationValidator.invalid" class="btn btn-primary">
+             Register
+           </button>
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

@@ -1,6 +1,44 @@
 {
-  "todo": [],
+  "todo": [
+    {
+      "text": "test",
+      "done": false,
+      "id": 1
+    },
+    {
+      "text": "test 2",
+      "done": false,
+      "id": 2
+    },
+    {
+      "text": "fsdfsd",
+      "done": false,
+      "id": 3
+    },
+    {
+      "text": "test aaaaaa",
+      "done": false,
+      "id": 4
+    }
+  ],
   "login": {
     "token": "fdgsdg-fake-token"
-  }
+  },
+  "users": [
+    {
+      "id": 1,
+      "name": "Sabrina",
+      "surname": "Giollo",
+      "email": "sabrina.giollo@sanmarcoinformatica.it",
+      "password": "abc123xyz",
+      "token": "token-fake-sabgio"
+    },
+    {
+      "name": "Sabrina",
+      "surname": "Giollo",
+      "email": "g.sabri1@hotmail.com",
+      "password": "aaabbbccc",
+      "id": 2
+    }
+  ]
 }

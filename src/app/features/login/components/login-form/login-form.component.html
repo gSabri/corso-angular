@@ -1,0 +1,50 @@
+<form [formGroup]="loginValidator" (submit)="login()">
+
+  <div class="form-group col-12">
+
+    <div class="card">
+
+      <div class="card-header">
+        <h4 class="card-title font-weight-bold text-center">{{title}}</h4>
+      </div>
+
+      <div class="card-body">
+        <p>
+          <label for="email">E-mail</label>
+          <input id="email" type="email" name="email"
+                 placeholder="Insert your email" autocomplete="off"
+                 class="form-control"
+                 formControlName="email" />
+          <span *ngIf="loginValidator.get('email').invalid" class="alert-danger">
+            Invalid email
+          </span>
+        </p>
+
+        <p>
+          <label for="password">Password</label>
+          <input id="password" type="password" name="password"
+                 placeholder="Insert your password" autocomplete="off"
+                 class="form-control"
+                 formControlName="password"/>
+          <span *ngIf="loginValidator.get('password').invalid" class="alert-danger">
+            Invalid password
+          </span>
+        </p>
+
+        <div class ="d-flex justify-content-between" style="margin-top: 0.5rem">
+          <button type="button" class="btn btn-primary" (click)="toRegistration()">
+            Register
+          </button>
+
+          <button type="submit" [disabled]="loginValidator.invalid" class="btn btn-primary">
+            Login
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</form>

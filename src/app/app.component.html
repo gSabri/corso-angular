@@ -3,11 +3,19 @@
 <!--</div>-->
 
 <!-- indica componente che fa da passaggio a contenuto dinamico -->
-<nav class="m-5 text-center">
-  <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-    Home
-  </a>
-  <a [routerLink]="['/todo']">Todo</a>
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav mr-auto">
+      <a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+        class="nav-item nav-link active">
+        Home
+      </a>
+      <a [routerLink]="['/login']" routerLinkActive="active"
+         class="nav-item nav-link">Login</a>
+      <a [routerLink]="['/todo']" routerLinkActive="active"
+         class="nav-item nav-link">Todo</a>
+    </div>
+  </div>
 </nav>
 
 <main>
