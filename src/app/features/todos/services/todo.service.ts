@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Todo} from "../models/todo";
+import {Todo} from '../models/todo';
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +36,11 @@ export class TodoService {
 
   // Popolamento nuovo todos con ritorno nuovo oggetto
   createTodo(todo: Todo): Observable<Todo> {
-    return this.http.post<Todo>(`${this.apiUrl}/todo/`, JSON.stringify(todo), this.httpOptions);
+    return this.http.post<Todo>(`${this.apiUrl}/todo`, JSON.stringify(todo), this.httpOptions);
+  }
+
+  // Aggiornamento singolo todos
+  updateTodo(todo: Todo): Observable<Todo> {
+    return this.http.put<Todo>(`${this.apiUrl}/todo/${todo.id}`, JSON.stringify(todo), this.httpOptions);
   }
 }

@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { Todo } from '../../models/todo';
 
 // Angular
@@ -11,19 +11,16 @@ import { Todo } from '../../models/todo';
 // Typescript
 export class TodoListComponent implements OnInit {
 
-  // ----- Dichiarative pubbliche
+  @Output() onElementToggle: EventEmitter<Todo> = new EventEmitter<Todo>();
+
   @Input() todos: Todo[] = [];
 
   public title: string = null;
-
-  // ----- Dichiarative protected
-
 
   constructor() {
     this.title = 'Titolo 1';
   }
 
-  // ----- Metodi pubblici
   ngOnInit(): void {
   }
 
@@ -32,8 +29,9 @@ export class TodoListComponent implements OnInit {
    */
   public onToggle(todo: Todo) {
     todo.done = !todo.done;
-  }
 
-  // ----- Metodi protected
+    // Emetto il valore
+    this.onElementToggle.emit(todo);
+  }
 
 }

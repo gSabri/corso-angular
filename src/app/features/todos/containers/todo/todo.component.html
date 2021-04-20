@@ -1,5 +1,5 @@
 <div class="container">
   <app-todo-form (onNewElement)="addNewElement($event)"></app-todo-form>
   <hr/>
-  <app-todo-list [todos]="todoList"></app-todo-list>
+  <app-todo-list [todos]="todoList" (onElementToggle)="elementToggle($event)"></app-todo-list>
 </div>

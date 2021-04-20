@@ -73,4 +73,25 @@ export class TodoComponent implements OnInit, OnDestroy {
       });
   }
 
+  public elementToggle(todo: Todo) {
+
+    // Persisto e aggiorno a lista
+    this.todoService.updateTodo(todo)
+      .pipe(
+        takeUntil(this.destroy),
+        catchError(err => {
+          window.alert('Errore http ' + err.message);
+          throw new Error('Errore http ' + err.message);
+        })
+      )
+      .subscribe(result => {
+        if (result !== null && result !== undefined) {
+          const foundIndex = this.todoList.findIndex(x => x.id === result.id);
+          if (foundIndex !== -1) {
+            this.todoList[foundIndex] = result;
+          }
+        }
+      });
+  }
+
 }

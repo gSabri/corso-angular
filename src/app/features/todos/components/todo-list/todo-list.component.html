@@ -5,7 +5,7 @@
       <span class="badge badge-primary mr-2"
             [ngClass]="{'badge-success' : !todo.done, 'badge-danger' : todo.done}"
             (click)="onToggle(todo)">
-        {{todo.done ? 'Non Fatto' : 'Fatto' }}
+        {{todo.done ? 'Not done' : 'Done' }}
       </span>
 
       <span [class.done-true]="todo.done">  <!-- {{todo.text | uppercase}}-->
